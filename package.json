@@ -5,9 +5,7 @@
   "main": "src/createFoolishContainer.js",
   "scripts": {
     "lint": "eslint src --ext .js",
-    "demo": "webpack-dev-server",
-    "compile": "babel src --out-dir lib",
-    "prepublish": "npm run compile"
+    "demo": "webpack-dev-server"
   },
   "keywords": [
     "react",
@@ -21,7 +19,8 @@
   "license": "MIT",
   "dependencies": {
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "textlint": "^8.2.1"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",

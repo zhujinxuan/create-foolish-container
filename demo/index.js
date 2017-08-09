@@ -13,14 +13,13 @@ let CounterContainer = createContainer({ counter: 0.5, },
     sub: () => (prevState) => ({ counter: prevState.counter - 1, }),
   })(CounterTemplate);
 
-let InputTemplate = (props, state, handlers) => <div>
-  <input onChange={handlers.change}/>
-  <p>{state.text}</p>
-</div>;
-let InputContainer = createContainer({ text: "My Cat is the cutest cat in the world", },
-  { change: ecurry((e, prevState) => ({ text: e.target.value, })),
+let InputContainer = createContainer({ cookies: 3, },
+  { change: ecurry((e, prevState) => ({ cookies: parseInt(e.target.value), })),
   }
-)(InputTemplate);
+)((props, state, handlers) => <p>
+  When you eat <input type="number" onChange={handlers.change} value={state.cookies} /> cookies, you consume {state.cookies * 50} calories.
+</p>
+);
 
 let container = document.createElement('div');
 document.body.appendChild(container);
