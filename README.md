@@ -1,5 +1,5 @@
 React developers often creates smart containers, in which changing one
-element changes other elements as well.  The most common way to generate 
+element changes other elements as well.  The most common ways to generate 
 reactive containers are to use `connect()` in Redux.  However, putting too much
 variables in the Redux is not a good idea.  In this package, we provided a
 method `createContainer()` for creating smart containers like the Redux's
@@ -12,7 +12,7 @@ createContainer(defaultState, handlers)(template = (props, state, handlers) => J
 ```
 
 `createContainer` includes two steps.  In the first step,
-`createContainer(defaultState, handlers)` define the container's intial state
+`createContainer(defaultState, handlers)` defines the container's intial state
 (`defaultState`) and state change methods (`handlers`).   In the second step, 
 we map the container's `props`, `state` and state change method `handlers` to 
 a JSX template. 
@@ -20,8 +20,8 @@ a JSX template.
 
 `defaultState : Object` The initialization of the React State;
 
-`handlers : { method_name: (...args) => StateChange}` 
-The `StateChange` here could be any arguments accepted by React's `this.setState(stateChange)`, 
+`handlers : { method_name: (...args) => stateChange}` 
+The `stateChange` here could be any arguments accepted by React's `this.setState(stateChange)`, 
 so `(...args) => StateChange`, as values of handlers, could be 
 
 1. `(*...args) => newState`
@@ -41,7 +41,7 @@ ecurry((e, prevState, Props) => {newState})
 
 `ecurry` is a curry function to transit `SyntheticEvent` from child component
 to parent compoents with `event.persist()`, which works as
-`ecurry(f)(e ) === (...args) => {e.persist(); f(e,...args)}`
+`ecurry(f)(e) === (...args) => {e.persist(); f(e,...args)}`
 
 
 ## Example Code
