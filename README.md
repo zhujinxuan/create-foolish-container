@@ -2,8 +2,8 @@
 
 We Redux Users often create smart containers, containers connected to Redux or
 Flux for reactive interactions, which means changing one elments changes other
-elements as well.  However, in developing view components, putting into Redux
-is not a good idea in development. 
+elements as well.  However, in developing view components, putting too much 
+variables into Redux is not a good idea in development. 
 
 Let us say the containers connected with Redux as the smart containers, and we 
 need to create some 'foolish' containers which provides reactive actions without 
