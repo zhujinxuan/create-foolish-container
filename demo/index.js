@@ -1,4 +1,4 @@
-import createContainer, { ecurry } from '../src/createFoolishContainer';
+import createContainer, { ecurry } from 'create-foolish-container';
 import React from 'react';
 import { render } from 'react-dom';
 

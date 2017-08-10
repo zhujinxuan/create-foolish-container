@@ -7,6 +7,11 @@ module.exports = {
     path: path.join(__dirname, '/build'),
     filename: 'bundle.js'
   },
+  resolve: {
+    alias: {
+      ["create-foolish-container"]: path.join(__dirname, 'src/createFoolishContainer.js')
+    }
+  },
   devtool: 'sourcemap',
   module: {
     loaders: [

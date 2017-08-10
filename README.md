@@ -66,6 +66,9 @@ These example codes could be seen in `demo/`.  You could run `npm run demo` to s
 This example shows creating a simple Counter Component with `createContainer`
 
 ```jsx
+import createContainer from 'create-foolish-container';
+import React from 'react';
+
 let CounterTemplate = (props, state, handlers) => <div>
   <h2>{state.counter}</h2>
   <button onClick={handlers.sub}>-</button>
@@ -83,6 +86,9 @@ let CounterContainer = createContainer({ counter: 0.5, },
 This example shows the usage of `eccury`, a curry wrapper with `e.persist` of the React;
 
 ```jsx
+import createContainer, { ecurry } from 'create-foolish-container';
+import React from 'react';
+
 let InputContainer = createContainer({ cookies: 3, },
   { change: ecurry((e, prevState) => ({ cookies: parseInt(e.target.value), })),
   }
