@@ -1,9 +1,17 @@
-React developers often creates smart containers, in which changing one
-element changes other elements as well.  The most common ways to generate 
-reactive containers are to use `connect()` in Redux.  However, putting too much
-variables in the Redux is not a good idea.  In this package, we provided a
-method `createContainer()` for creating smart containers like the Redux's
-`connect()`, without connecting to the Redux.
+# Create 'Foolish' Container
+
+We Redux Users often create smart containers, containers connected to Redux or
+Flux for reactive interactions, which means changing one elments changes other
+elements as well.  However, in developing view components, putting into Redux
+is not a good idea in development. 
+
+Let us say the containers connected with Redux as the smart containers, and we 
+need to create some 'foolish' containers which provides reactive actions without 
+Redux.  Therefore, we could keep the Redux state neat and clean. 
+
+This package provides a `createContainer()` method with a similar interface of 
+Redux's connect, and it is not connected to Redux. 
+
 
 ## Usage
 
@@ -74,7 +82,9 @@ let InputContainer = createContainer({ cookies: 3, },
   { change: ecurry((e, prevState) => ({ cookies: parseInt(e.target.value), })),
   }
 )((props, state, handlers) => <p>
-  When you eat <input type="number" onChange={handlers.change} value={state.cookies} /> cookies, you consume {state.cookies * 50} calories.
+  When you eat 
+  <input type="number" onChange={handlers.change} value={state.cookies} /> cookies,
+  you consume {state.cookies * 50} calories.
 </p>
 );
 ```
