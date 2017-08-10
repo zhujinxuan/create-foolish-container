@@ -15,17 +15,20 @@ Redux's connect, and it is not connected to Redux.
 
 ## Usage
 
-``` 
-createContainer(defaultState, handlers)(template = (props, state, handlers) => JSX)
+### `createContainer(defaultState, handlers)`
+
+`createContainer` creates a Container Component in two steps: 
+
+```jsx
+let newContainer = createContainer(defaultState, handlers)(template = (props, state, handlers) => JSX)
 ```
 
-`createContainer` includes two steps.  In the first step,
-`createContainer(defaultState, handlers)` defines the container's intial state
-(`defaultState`) and state change methods (`handlers`).   In the second step, 
-we map the container's `props`, `state` and state change method `handlers` to 
-a JSX template. 
+In the first step, `createContainer(defaultState, handlers)` defines the
+container's intial state (`defaultState`) and state change methods
+(`handlers`).   In the second step, we map the container's `props`, `state` and
+state change method `handlers` to a JSX template. 
 
-
+#### Arguments of `createContainer`
 `defaultState : Object` The initialization of the React State;
 
 `handlers : { method_name: (...args) => stateChange}` 
@@ -36,6 +39,7 @@ so `(...args) => StateChange`, as values of handlers, could be
 2. `(...args) => (prevState, Props) => (newState)`
 3. `(event, ...args) => {e.persist(); return (prevState, Props)=> (newState); }`
 
+#### Arguments of `createContainer(defaultState, handlers)`
 `template = (props, state, handlers) => JSX` 
 The template to map `props`, `state` and state change methods `handlers` 
 to a React DOM.  `props` is the `props` accepted by the container; `state`
@@ -43,7 +47,8 @@ is the `this.state` of the container. `handler` are state change methods
 
 More details could be seen in the following Example Code. 
 
-```
+### `ecurry`
+```jsx
 ecurry((e, prevState, Props) => {newState})
 ```
 
@@ -60,7 +65,7 @@ These example codes could be seen in `demo/`.  You could run `npm run demo` to s
 
 This example shows creating a simple Counter Component with `createContainer`
 
-```
+```jsx
 let CounterTemplate = (props, state, handlers) => <div>
   <h2>{state.counter}</h2>
   <button onClick={handlers.sub}>-</button>
@@ -77,7 +82,7 @@ let CounterContainer = createContainer({ counter: 0.5, },
 
 This example shows the usage of `eccury`, a curry wrapper with `e.persist` of the React;
 
-```
+```jsx
 let InputContainer = createContainer({ cookies: 3, },
   { change: ecurry((e, prevState) => ({ cookies: parseInt(e.target.value), })),
   }
