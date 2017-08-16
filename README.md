@@ -19,7 +19,7 @@ Redux's connect, but it is not connected to Redux.
 
 `createContainer` creates a Container Component in two steps: 
 
-```jsx
+```js
 let newContainer = createContainer(defaultState, handlers)(template = (props, state, handlers) => JSX)
 ```
 
@@ -48,7 +48,7 @@ is the `this.state` of the container. `handler` are state change methods
 More details can be seen in the following Example Code. 
 
 ### `ecurry`
-```jsx
+```js
 ecurry((e, prevState, Props) => {newState})
 ```
 
@@ -65,7 +65,7 @@ These example code snippets could be seen in `demo/`.  You could run `npm run de
 
 This example shows creating a simple Counter Component with `createContainer`
 
-```jsx
+```js
 import createContainer from 'create-foolish-container';
 import React from 'react';
 
@@ -85,7 +85,7 @@ let CounterContainer = createContainer({ counter: 0.5, },
 
 This example shows the usage of `eccury`, a curry wrapper with `e.persist` of the React;
 
-```jsx
+```js
 import createContainer, { ecurry } from 'create-foolish-container';
 import React from 'react';
 
