@@ -1,6 +1,6 @@
 {
   "name": "create-foolish-container",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Create Reactive Containers Without Connecting to Redux or Mobx",
   "main": "src/createFoolishContainer.js",
   "scripts": {

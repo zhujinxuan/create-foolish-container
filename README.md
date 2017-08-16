@@ -2,15 +2,15 @@
 
 We Redux Users often create smart containers, containers connected to Redux or
 Flux for reactive interactions, which means changing one elments changes other
-elements as well.  However, in developing view components, putting too much 
+elements as well.  However, in developing view components, putting too many 
 variables into Redux is not a good idea in development. 
 
 Let us say the containers connected with Redux as the smart containers, and we 
-need to create some 'foolish' containers which provides reactive actions without 
+need to create some 'foolish' containers that provide reactive actions without 
 Redux.  Therefore, we could keep the Redux state neat and clean. 
 
 This package provides a `createContainer()` method with a similar interface of 
-Redux's connect, and it is not connected to Redux. 
+Redux's connect, but it is not connected to Redux. 
 
 
 ## Usage
@@ -32,7 +32,7 @@ state change method `handlers` to a JSX template.
 `defaultState : Object` The initialization of the React State;
 
 `handlers : { method_name: (...args) => stateChange}` 
-The `stateChange` here could be any arguments accepted by React's `this.setState(stateChange)`, 
+The `stateChange` here could be any argument accepted by React's `this.setState(stateChange)`, 
 so `(...args) => StateChange`, as values of handlers, could be 
 
 1. `(*...args) => newState`
@@ -45,7 +45,7 @@ The template to map `props`, `state` and state change methods `handlers`
 to a React DOM.  `props` is the `props` accepted by the container; `state`
 is the `this.state` of the container. `handler` are state change methods 
 
-More details could be seen in the following Example Code. 
+More details can be seen in the following Example Code. 
 
 ### `ecurry`
 ```jsx
@@ -59,7 +59,7 @@ to parent compoents with `event.persist()`, which works as
 
 ## Example Code
 
-These example codes could be seen in `demo/`.  You could run `npm run demo` to see the result of following codes.
+These example code snippets could be seen in `demo/`.  You could run `npm run demo` to see the result of following code.
 
 ### Counter 
 
