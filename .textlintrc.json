@@ -1,0 +1,7 @@
+{
+    "rules": {
+        "eslint": {
+          "configFile": ".eslintrc.json"
+        }
+    }
+}

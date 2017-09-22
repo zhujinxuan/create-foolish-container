@@ -1,9 +1,11 @@
 {
   "name": "create-foolish-container",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Create Reactive Containers Without Connecting to Redux or Mobx",
-  "main": "src/createFoolishContainer.js",
+  "main": "lib/createFoolishContainer.js",
   "scripts": {
+    "babel-prepublish": "babel src/ -d lib",
+    "prepublish": "npm run babel-prepublish",
     "lint": "eslint src --ext .js",
     "demo": "webpack-dev-server"
   },
@@ -19,8 +21,7 @@
   "license": "MIT",
   "dependencies": {
     "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "textlint": "^8.2.1"
+    "react-dom": "^15.6.1"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
