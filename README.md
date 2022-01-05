@@ -1,3 +1,5 @@
+> This package is not maintained anymore.  This package was for React 15 without React Context.  Given the React Context and React Hooks today, this package is no longer needed.
+
 # Create 'Foolish' Container
 
 We Redux Users often create smart containers, containers connected to Redux or
